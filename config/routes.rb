@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-   get 'users/:id' => 'homes#index'
   root :to => 'homes#top'
   devise_for :users
-  resources :post_images, only: [ :edit, :show]
+  get 'users' , to: 'users#index' 
+  resources :post_images, only: [ :edit, :show, :index]
   resources :books
   resources :blogs do
  
